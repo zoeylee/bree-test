@@ -1,0 +1,32 @@
+{
+  "name": "bree-test",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "backend": "npx babel-node --presets @babel/preset-env ./server/Server.js",
+    "frontend": "webpack serve"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-proposal-decorators": "^7.12.12",
+    "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "axios": "^1.6.2",
+    "babel-loader": "^8.2.2",
+    "clear": "^0.1.0",
+    "css-loader": "^5.0.1",
+    "file-loader": "^6.2.0",
+    "image-loader": "0.0.1",
+    "img-loader": "^3.0.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1",
+    "webpack-dev-server": "^4.5.0"
+  }
+}
