@@ -11,7 +11,8 @@ class HTTPServer {
 
   start() {
     this.server = http.createServer(this.requestHandler.bind(this));
-    this.server.listen(8009, () => console.log('Server is running on port 8009'));
+    const port = process.env.PORT || 3001;
+    this.server.listen(port, () => console.log('Server is running on port port'));
   }
 
   async stop() {
