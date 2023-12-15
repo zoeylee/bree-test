@@ -1,14 +1,13 @@
 const validateInput = {
-  integer: (value) => {
-    if (typeof value !== 'number' && typeof value !== 'string') {
+  notEmpty: (value) => {
+    if (value === null || value === undefined) {
       return false;
     }
-    var n = Number(value);
-    return Number.isInteger(n) && n >= 0;
-  },
-
-  notNull: (value) => {
-    return value !== null && value !== undefined;
+  
+    if (typeof value === 'string' && value.trim().length === 0) {
+      return false;
+    }
+    return true;
   },
 };
 

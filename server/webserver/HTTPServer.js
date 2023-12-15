@@ -1,6 +1,7 @@
 import http from 'http';
 import url from 'url';
 import Request from './Request';
+import config from '../Config';
 
 class HTTPServer {
   constructor(config) {
@@ -35,7 +36,7 @@ class HTTPServer {
   }
 
   setCORSHeaders(response) {
-    response.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+    response.setHeader('Access-Control-Allow-Origin', config.Access_Control_Allow_Origin);
     response.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     response.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     response.setHeader('Access-Control-Allow-Credentials', true);

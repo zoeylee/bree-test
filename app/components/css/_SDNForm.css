@@ -61,3 +61,11 @@
     padding: 20px;
   }
   
+  .errorMessage {
+    color: red;
+  }
+
+  .select-disabled-option {
+    color: #757575;
+  }
+  

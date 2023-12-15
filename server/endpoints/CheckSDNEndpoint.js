@@ -11,6 +11,12 @@ const CheckSDNEndpoint = {
   respond: async function (request) {
     try {
       const { fullname, birthYear, country } = request.getBody();
+      if (!validateInput.notEmpty(fullname) || 
+          !validateInput.notEmpty(birthYear) || 
+          !validateInput.notEmpty(country)) {
+        request.respondJSON(JSON.stringify({ error: 'fullname, birthYear, and country must not be empty.' }), 400);
+        return;
+      }
       const response = await this.queryAPI(fullname, birthYear, country);
       const result = this.getMatches(response, fullname, birthYear, country);
       request.respondJSON(JSON.stringify({ result }));

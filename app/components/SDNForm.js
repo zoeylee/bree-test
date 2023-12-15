@@ -14,6 +14,7 @@ const SDNForm = () => {
   const [result, setResult] = useState('');
   const [errors, setErrors] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const generateYears = () => {
     const currentYear = new Date().getFullYear();
@@ -25,13 +26,22 @@ const SDNForm = () => {
   };
 
   const handleChange = (e) => {
+    changeSelectStyle(e);
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    
+    setErrorMessage('');
     if (errors[e.target.name]) {
       setErrors({ ...errors, [e.target.name]: false });
     }
-
   };
+
+  const changeSelectStyle = (e) => {
+    if (e.target.name === "fullname") {
+      return;
+    }
+    if (e.target.value !== "") {
+      e.target.classList.remove("select-disabled-option");
+    }
+  }
 
   const validateForm = () => {
     const newErrors = {};
@@ -45,6 +55,7 @@ const SDNForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage('');
     setIsLoading(true);
 
     if (!validateForm()) {
@@ -59,6 +70,12 @@ const SDNForm = () => {
       }
     } catch (error) {
       console.error('Error:', error);
+      if (error.response && error.response.data && error.response.data.error) {
+        setErrorMessage(error.response.data.error);
+      }
+      else {
+        setErrorMessage(error.message);
+      }
     }
     setIsLoading(false);
   };
@@ -86,6 +103,15 @@ const SDNForm = () => {
     );
   };
 
+  const renderFailed = () => {
+    if (!errorMessage) return null;
+    return (
+      <div className="errorMessage">
+        <p>Error: {errorMessage}</p>
+      </div>
+    );
+  }
+
   return (
     <div>
       <div className="form-container">
@@ -104,8 +130,8 @@ const SDNForm = () => {
             id="birthYear"
             name="birthYear"
             onChange={handleChange}
-            className={`form-select ${errors.birthYear ? 'error' : ''}`}
-            defaultValue="1939"
+            className={`select-disabled-option form-select ${errors.birthYear ? 'error' : ''}`}
+            defaultValue=""
           >
             <option value="" disabled>Select Birth Year</option>
             {generateYears().map(year => (
@@ -117,7 +143,7 @@ const SDNForm = () => {
             id="country"
             name="country"
             onChange={handleChange}
-            className={`form-select ${errors.country ? 'error' : ''}`}
+            className={`select-disabled-option form-select ${errors.country ? 'error' : ''}`}
             defaultValue=""
           >
             <option value="" disabled>Select Country</option>
@@ -129,6 +155,7 @@ const SDNForm = () => {
             {isLoading ? 'Loading...' : 'Check SDN'}
           </button>
         </form>
+        {renderFailed()}
       </div>
       {renderResult()}
     </div>
