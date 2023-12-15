@@ -1,1 +1,1 @@
-export const API_ENDPOINT = 'http://127.0.0.1:8009/api/post/check-sdn';
+export const API_ENDPOINT = 'https://bree-test-jol4.onrender.com/api/post/check-sdn';
