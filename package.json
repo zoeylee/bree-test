@@ -3,10 +3,11 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "npm run build-frontend && npm run backend",
+    "build-frontend": "npm install && npm run build",
     "backend": "npx babel-node --presets @babel/preset-env ./server/Server.js",
     "frontend": "webpack serve",
-    "build": "webpack --config webpack.config.js",
-    "start": "npm run backend"
+    "build": "webpack --config webpack.config.js"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
