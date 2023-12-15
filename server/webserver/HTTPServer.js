@@ -12,7 +12,7 @@ class HTTPServer {
   start() {
     this.server = http.createServer(this.requestHandler.bind(this));
     const port = process.env.PORT || 3001;
-    this.server.listen(port, () => console.log('Server is running on port port'));
+    this.server.listen(port, () => console.log(`Server is running on port ${port}`));
   }
 
   async stop() {
