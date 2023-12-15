@@ -1,4 +1,4 @@
-# Take Home Exercise: Part 1
+<img width="541" alt="Screenshot 2023-12-14 at 10 14 34 PM" src="https://github.com/zoeylee/bree-test/assets/6045763/d0ba6233-6702-4fb1-ac78-548dbcd83c6e"># Take Home Exercise: Part 1
 
 ## Overview
 
@@ -63,3 +63,7 @@ npm run frontend
 │       └── Request.js
 └── webpack.config.js 
 ```
+## UI  
+
+<img width="541" alt="Screenshot 2023-12-14 at 10 16 12 PM" src="https://github.com/zoeylee/bree-test/assets/6045763/fcb3e27a-b072-4c6e-9950-e6909d714f90">
+
