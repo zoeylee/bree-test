@@ -1,4 +1,4 @@
-<img width="541" alt="Screenshot 2023-12-14 at 10 14 34 PM" src="https://github.com/zoeylee/bree-test/assets/6045763/d0ba6233-6702-4fb1-ac78-548dbcd83c6e"># Take Home Exercise: Part 1
+# Take Home Exercise: Part 1
 
 ## Overview
 
