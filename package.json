@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "backend": "npx babel-node --presets @babel/preset-env ./server/Server.js",
-    "frontend": "webpack serve"
+    "frontend": "webpack serve",
+    "build": "webpack --config webpack.config.js",
+    "start": "npm run backend"
   },
   "dependencies": {
     "@babel/core": "^7.12.10",
@@ -13,8 +15,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
-    "@babel/preset-react": "^7.12.10",
-    "axios": "^1.6.2",
+    "@babel/preset-react": "^7.12.10",    "axios": "^1.6.2",
     "babel-loader": "^8.2.2",
     "clear": "^0.1.0",
     "css-loader": "^5.0.1",
