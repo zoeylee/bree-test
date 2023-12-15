@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "npm run build-frontend && npm run backend",
+    "start": "npm run frontend",
     "start-all": "concurrently \"npm run backend\" \"npm run frontend\"",
     "build-frontend": "npm install && npm run build",
     "backend": "npx babel-node --presets @babel/preset-env ./server/Server.js",
